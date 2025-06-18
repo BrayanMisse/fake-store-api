@@ -288,3 +288,59 @@ POST:
 - Add graphql support
 - Add pagination
 - Add another language support
+
+# Fake Store API - Pruebas Automatizadas
+
+Este proyecto contiene una suite de pruebas automatizadas para validar el funcionamiento de la API pública de Fake Store (https://fakestoreapi.com), cubriendo los principales endpoints de productos, usuarios, autenticación y carritos.
+
+## Estructura del proyecto
+
+- `tests/`: Pruebas automatizadas en Python usando Pytest y Requests.
+- `data/`: Datos externos para pruebas (puedes agregar archivos JSON si lo requieres).
+- `requirements.txt`: Dependencias del proyecto.
+
+## Instalación y ejecución
+
+1. Instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Ejecuta las pruebas:
+
+```bash
+pytest tests/
+```
+
+## Endpoints cubiertos
+- GET /products
+- GET /products/{id}
+- POST /users
+- POST /auth/login
+- GET /carts/user/2
+- DELETE /carts/{id}
+- PUT /products/{id}
+
+## Buenas prácticas aplicadas
+- Casos positivos y negativos.
+- Validación de status code y estructura de respuesta.
+- Uso de datos externos y aleatorios para evitar hardcodeo.
+- Código modular y legible.
+
+## (Opcional) Integración CI/CD
+Puedes agregar un flujo de integración continua usando GitHub Actions, GitLab CI, etc., para ejecutar las pruebas automáticamente en cada push.
+
+## Decisiones técnicas
+
+- Se implementaron pruebas negativas esperando los códigos de error estándar (404, 400, 500) para evidenciar el conocimiento de buenas prácticas REST, aunque la API pública no responde correctamente en estos casos.
+- Se usaron datos aleatorios para evitar hardcodeo y asegurar independencia entre pruebas.
+- La estructura del proyecto permite fácil mantenimiento y escalabilidad.
+
+---
+
+**Autor:** [Brayan Camilo Herrera Misse]
+
+> **Nota importante:**
+> 
+> La API pública de Fake Store responde con código 200 incluso en casos donde lo correcto sería un error HTTP (por ejemplo, producto no encontrado o registro de usuario con datos incompletos). Las pruebas automatizadas contemplan el comportamiento esperado según buenas prácticas REST (por ejemplo, esperar 404 para recursos no encontrados o 400/500 para datos inválidos), pero algunas fallan debido a esta limitación de la API. Esto se deja así intencionalmente para evidenciar el conocimiento de los estándares y las buenas prácticas en automatización de pruebas de servicios.
