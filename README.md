@@ -344,3 +344,10 @@ Puedes agregar un flujo de integración continua usando GitHub Actions, GitLab C
 > **Nota importante:**
 > 
 > La API pública de Fake Store responde con código 200 incluso en casos donde lo correcto sería un error HTTP (por ejemplo, producto no encontrado o registro de usuario con datos incompletos). Las pruebas automatizadas contemplan el comportamiento esperado según buenas prácticas REST (por ejemplo, esperar 404 para recursos no encontrados o 400/500 para datos inválidos), pero algunas fallan debido a esta limitación de la API. Esto se deja así intencionalmente para evidenciar el conocimiento de los estándares y las buenas prácticas en automatización de pruebas de servicios.
+
+## Integración Continua (CI/CD)
+
+Este repositorio incluye un flujo de integración continua con GitHub Actions.  
+Cada vez que se realiza un push o un Pull Request a la rama `master`, se ejecutan automáticamente todas las pruebas de la suite usando Pytest.
+
+Puedes ver la configuración en `.github/workflows/python-app.yml`.
