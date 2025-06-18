@@ -296,7 +296,7 @@ Este proyecto contiene una suite de pruebas automatizadas para validar el funcio
 ## Estructura del proyecto
 
 - `tests/`: Pruebas automatizadas en Python usando Pytest y Requests.
-- `data/`: Datos externos para pruebas (puedes agregar archivos JSON si lo requieres).
+- `data/`: Datos externos para pruebas.
 - `requirements.txt`: Dependencias del proyecto.
 
 ## Instalación y ejecución
@@ -339,7 +339,7 @@ Puedes agregar un flujo de integración continua usando GitHub Actions, GitLab C
 
 ---
 
-**Autor:** [Brayan Camilo Herrera Misse]
+**Autor:** Brayan Camilo Herrera Misse
 
 > **Nota importante:**
 > 
